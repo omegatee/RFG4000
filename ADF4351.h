@@ -10,16 +10,12 @@ Analog Device's ADF4351 Library
 #define LE_PIN 3
 #define LD_PIN 4
 /*
-	
-	Frequency Resolution
-	--------------------
-  With REF_XTAL at 25 MHz and R2.RCounter set to 8, frequency resolution is 
-  3.125MHz * 1 / 4096 = 762.94Hz This makes a useful 1 kHz step.
 
   Frequency Limit
   ---------------
-  While ADF limit is 4,4 GHz, this value in Hertz exceeds the 32-bit values of the
-  Arduino compiler. This limits frequency to 4,2949 GHz.
+  While ADF limit is 4,4 GHz, this value in Hertz exceeds a 32-bit value range.
+  On 32-bit compilers, some 64-bit operations can be made, but this limits
+  frequency to 4,2949 GHz over 8 or 16-bit uC.
 
   If frequency is computed in kHz (a tolerable limitation
   for a simple instrument), this limit will rise to 4,29 THz.
